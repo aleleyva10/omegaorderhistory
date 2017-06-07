@@ -1,0 +1,16 @@
+.display{
+  display: inline-block;
+  width: 45%;
+}
+#header{
+  text-align: center;
+}
+#footer{
+  text-align: center;
+}
+#lastOne{
+  border-top: 2px solid black;
+}
+#order{
+  vertical-align: top;
+}
