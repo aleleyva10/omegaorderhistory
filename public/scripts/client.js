@@ -57,8 +57,9 @@ function displayOrders(response){
 
 for (var i = 0; i < response.length; i++) {
 var itemSum = 0;
-var price = response[i].unit_price;
 
+var price = response[i].unit_price;
+console.log(price);
   var tableRow = '<tr>';
         tableRow += '<td>' + response[i].id + '</td>';
         tableRow += '<td>' + response[i].description + '</td>';
@@ -67,8 +68,15 @@ var price = response[i].unit_price;
         itemSum = response[i].unit_price * response[i].quantity;
         totalSum.push(itemSum);
         itemQuan.push(response[i].quantity);
-        tableRow += '<td>' + itemSum + '</td>';
+        tableRow += '<td>' + Number(itemSum).toFixed(2) + '</td>';
         tableRow += '</tr>';
+    // var etableRow = '<tr id="orderRow">';
+    //       etableRow += '<td>';
+    //       etableRow += '<td>';
+    //       etableRow += '<td>TOTAL:</td>';
+    //       etableRow += '<td id>'+ itemQuan1+'</td>';
+    //       etableRow += '<td>'+ totalSum2.toFixed(2) +'</td>';
+    //       etableRow += '</tr>';
     $('#myTable tr:last').after(tableRow);
 
 }

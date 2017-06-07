@@ -66,7 +66,7 @@ app.get('/orders/:id', function(req, res) {
     } else {
       console.log('connected to db');
       var ordersList = [];
-      var resultSet = connection.query('SELECT orders.id, products.description, line_items.unit_price, line_items.quantity '+
+      var resultSet = connection.query('SELECT orders.id, products.description, line_items.unit_price, line_items.quantity, line_items.unit_price*line_items.quantity AS "itemtotal"'+
         'FROM customers '+
         'JOIN addresses ON customers.id = addresses.customer_id' +
 	       ' JOIN orders ON addresses.id = orders.address_id '+
